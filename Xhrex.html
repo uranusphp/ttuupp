@@ -51,7 +51,7 @@
 
 </option>
         <option>https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse2.txt</option>
-        <option>Verse 3</option>
+        <option>https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse3.txt</option>
         <option>Verse 4</option>
       </select>
     </form>
@@ -64,8 +64,20 @@
 
     <script>
 
+      function Poem() {
+        this.verse1 = "https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse1.txt";
+        this.verse2 = "https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse2.txt";
+        this.verse3 = "https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse3.txt";
+        this.verse4 = "https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse4.txt";
+          }
       
+      var poem1 = new Poem();
       var verseChoose = document.querySelector('select');
+      for (i=1; i<5; i++) {
+      var opt = document.createElement('option');
+      opt.textContent= 'verse' + i
+        verseChoose.appendChild(opt);
+        }
 var poemDisplay = document.querySelector('pre');
 
 verseChoose.onchange = function() {
@@ -73,9 +85,9 @@ verseChoose.onchange = function() {
   updateDisplay(verse);
 };
       
-   function updateDisplay(verse) {
+   function updateDisplay(verse, poem1) {
      
-     var url = verse;
+     var url = poem1[verse];
      var request = new XMLHttpRequest();
      request.open('GET', url);
      request.responseType = 'text';
