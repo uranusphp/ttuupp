@@ -75,9 +75,9 @@
         }
 var poemDisplay = document.querySelector('pre');
 var verse = verseChoose.value;
-verseChoose.onchange = function() {
+verseChoose.onchange = function(verse) {
  //ve = verseChoose.value;
- updateDisplay(ve, poem1);
+ updateDisplay(verse, poem1);
 };
       
    function updateDisplay(verse, poem1) {
