@@ -47,12 +47,7 @@
     <form>
       <label for="verse-choose">Choose a verse</label>
       <select id="verse-choose" name="verse-choose">
-        <option>https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse1.txt
-
-</option>
-        <option>https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse2.txt</option>
-        <option>https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse3.txt</option>
-        <option>Verse 4</option>
+       
       </select>
     </form>
 
@@ -82,7 +77,7 @@ var poemDisplay = document.querySelector('pre');
 
 verseChoose.onchange = function() {
   var verse = verseChoose.value;
-  updateDisplay(verse);
+  updateDisplay(verse, poem1);
 };
       
    function updateDisplay(verse, poem1) {
@@ -98,6 +93,7 @@ verseChoose.onchange = function() {
      
      
      }
+      var verse = verseChoose.value;
       updateDisplay(verse, poem1);
 
      
