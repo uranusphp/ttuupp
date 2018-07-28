@@ -73,6 +73,22 @@ verseChoose.onchange = function() {
   updateDisplay(verse);
 };
       
+   function updateDisplay(verse) {
+     
+     var url = verse;
+     var request = new XMLHttpRequest();
+     request.open('GET', url);
+     request.responseType = 'text';
+     request.onload = function() {
+  poemDisplay.textContent = request.response;
+};
+     request.send();
+     
+     
+     }
+      updateDisplay('https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse1.txt');
+verseChoose.value = 'https://raw.githubusercontent.com/mdn/learning-area/master/javascript/apis/fetching-data/verse1.txt';
+     
       
     </script>
   </body>
