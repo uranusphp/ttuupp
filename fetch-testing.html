@@ -84,11 +84,7 @@ verseChoose.onchange = function(verse) {
      
      var url = poem1[verse];
      
-     fetch(url).then(function(response) {
-  response.text().then(function(text) {
-    poemDisplay.textContent = text;
-  });
-});
+     
      
      }
       
