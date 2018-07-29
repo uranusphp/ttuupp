@@ -83,13 +83,7 @@ verseChoose.onchange = function(verse) {
    function updateDisplay(verse) {
      
      var url = poem1[verse];
-     var request = new XMLHttpRequest();
-     request.open('GET', url);
-     request.responseType = 'text';
-     request.onload = function() {
-  poemDisplay.textContent = request.response;
-};
-     request.send();
+     
      
      
      }
